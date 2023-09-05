@@ -24,9 +24,17 @@ struct node{
     struct node* next;
 };
 
+struct sortedNodes{
+    char *wordPair;
+    void *value;
+};
+
 struct hashTable init();
 struct node* find(struct hashTable, char*);
 struct hashTable insert(struct hashTable, char*, void*);
 int bucketSize(struct node**, int);
 void printTable(struct node**, int);
 struct hashTable grow(struct hashTable);
+struct sortedNodes* toArray(struct hashTable);
+int comparator(const void*, const void*);
+void printArray(struct sortedNodes*, int);

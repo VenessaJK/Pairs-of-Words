@@ -36,7 +36,6 @@ struct hashTable insert(struct hashTable hash, char* key, void* val){
         int ttlnumofnodes = hash.numOfNodes;
         hash = grow(hash);
         hash.numOfNodes = ttlnumofnodes;
-        printf("this is the table size in hash struct aft grow fnc executed %d\n", hash.tableSize);
     }
     // if table was grown, this index loses meaning 
     // bc there will be new data written at the index

@@ -53,8 +53,6 @@ struct hashTable grow(struct hashTable hash){
 
     newHash.table = newTable;
 
-    printf("this is the new size: %d\n", newHash.tableSize);
-
     // clean(hash.table);
     return newHash;
 }

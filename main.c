@@ -52,12 +52,16 @@ int main(int argc, char** argv){
             count->occur = 1;
             // insert the wordpair into table   
             hash = insert(hash, wordPair, count);
-            printf("this is the table size in main %d\n", hash.tableSize);
             hash.numOfNodes++;
         }
     }
+    
     printTable(hash.table, hash.tableSize);
     printf("number of total nodes: %d\n", hash.numOfNodes);
-    printf("this is the table size %d", hash.tableSize);
+    printf("this is the table size %d\n", hash.tableSize);
+
+    struct sortedNodes* sortedTable = toArray(hash);
+    qsort(sortedTable, hash.numOfNodes, sizeof(struct sortedNodes), comparator);
+    printArray(sortedTable, hash.numOfNodes);
     return 0;
 }
